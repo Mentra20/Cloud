@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres:13.4
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=td1_cloud
+
+  td1:
+    image: td1-cloud
+
+    build: .
+
+    ports:
+      - 8080:8080
+
